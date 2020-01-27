@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Prezi</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Raleway:300,500,600&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+      }
+      nav {
+        display: flex;
+        width: 100%;
+        height: 72px;
+        padding: 6px 30px;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      nav .nav-wrapper {
+        display: flex;
+        align-items: center;
+      }
+      nav .nav-wrapper .item {
+      }
+      nav .nav-wrapper .item p {
+        padding: 8px 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      nav .nav-wrapper .item button {
+        background-color: #3181ff;
+        color: white;
+        padding: 8px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 3px;
+      }
+
+      section {
+        width: 80%;
+        max-width: 1024px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .header-section {
+        display: flex;
+        padding-top: 100px;
+        justify-content: space-around;
+      }
+      .header-section .img-wrapper {
+        flex-grow: 1;
+      }
+      .header-section .img-wrapper img {
+        width: 500px;
+      }
+      .header-section .content-wrapper {
+        flex-grow: 1;
+        max-width: 550px;
+      }
+      .header-section .content-wrapper p {
+        font-size: 36px;
+        line-height: 48px;
+        color: #2ec986;
+        margin-bottom: 30px;
+      }
+      .header-section .content-wrapper button {
+        display: block;
+        background-color: #2ec986;
+        border-color: #2ec986;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        color: white;
+        padding: 17px 80px;
+      }
+      .header-section .content-wrapper a {
+        color: #3181ff;
+        text-decoration: none;
+        margin-top: 20px;
+        padding-bottom: 2px;
+        display: inline-block;
+      }
+      .header-section .content-wrapper a:hover {
+        text-decoration: underline;
+      }
+      .section-title {
+        margin: 100px auto;
+      }
+      .section-title h2 {
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 300;
+        text-align: center;
+      }
+      .section-quick-start {
+        display: flex;
+        align-items: center;
+        margin: 50px auto;
+      }
+
+      .section-quick-start .img-content img {
+        width: 500px;
+      }
+      .section-quick-start .img-wrapper {
+        flex-grow: 1;
+      }
+      .section-quick-start .content-wrapper {
+        flex-grow: 1;
+      }
+      .section-quick-start .content-wrapper h2 {
+        margin-bottom: 24px;
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 500;
+      }
+      .section-quick-start .content-wrapper p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .section-quick-start .content-wrapper ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .section-quick-start .content-wrapper ul li {
+        margin: 0;
+        padding: 0;
+        margin-right: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+      .section-quick-start .content-wrapper ul li a {
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+      }
+      .section-quick-start .content-wrapper ul li .underlined {
+        display: block;
+        border-bottom: 1px solid #3181ff;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        top: -1px;
+        left: -150%;
+        transition: left 0.5s;
+        pointer-events: none;
+      }
+      /* .section-quick-start .content-wrapper ul li a.active {
+        color: #3181ff;
+      }
+      .section-quick-start .content-wrapper ul li a:hover {
+        color: #3181ff;
+      } */
+      .section-quick-start .content-wrapper ul li:hover .underlined {
+        left: 0;
+        display: block;
+      }
+      footer {
+        box-sizing: border-box;
+        padding: 50px 5%;
+      }
+
+      .wrapper {
+        display: flex;
+      }
+
+      .left {
+        flex-grow: 1;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+      .right {
+        flex-grow: 1;
+        width: 50%;
+      }
+
+      .first,
+      .second {
+        display: flex;
+      }
+
+      footer ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        width: 30%;
+        margin-right: 3.333%;
+      }
+      footer li p{
+        margin: 0;
+      }
+
+      footer ul li:first-child {
+        margin-bottom: 12px;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: .5px;
+        color: black;
+        font-weight: 600;
+      }
+
+      footer ul li {
+        color: #8e939c;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href=""
+        ><img
+          src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/common/img/logo/prezi-logo.svg"
+          alt=""
+      /></a>
+      <div class="nav-wrapper">
+        <div class="item">
+          <p>Product</p>
+        </div>
+        <div class="item">
+          <p>Business</p>
+        </div>
+        <div class="item">
+          <p>Education</p>
+        </div>
+        <div class="item">
+          <p>Why prezi</p>
+        </div>
+        <div class="item">
+          <p>Discover</p>
+        </div>
+        <div class="item">
+          <p>Pricing</p>
+        </div>
+        <div class="item">
+          <p>Log in</p>
+        </div>
+        <div class="item">
+          <button>Get started</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="header-section">
+      <div class="img-wrapper">
+        <img
+          src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/cover/next/ease_to_impact/img/brain_en.jpg"
+          alt=""
+        />
+      </div>
+      <div class="content-wrapper">
+        <img
+          src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/cover/next/ease_to_impact/img/huffpo_logo.min.svg"
+          alt=""
+        />
+        <p>
+          "University researchers find Prezi more engaging, persuasive, and
+          effective than PowerPoint."
+        </p>
+        <button>See how it works</button>
+        <a href="">See the science behind Prezi →</a>
+      </div>
+    </section>
+    <section class="section-title">
+      <h2>Designed for people who aren’t designers</h2>
+    </section>
+    <section class="section-quick-start">
+      <div class="content-wrapper">
+        <h2>Quick to start</h2>
+        <p>
+          With designer templates, millions of reusable presentations, and a
+          PowerPoint-to-Prezi converter, there’s no need to start from
+          scratch—unless you want to.
+        </p>
+        <ul>
+          <li>
+            <a href="" class="active">Business</a>
+            <div class="underlined"></div>
+          </li>
+          <li>
+            <a href="">Marketing</a>
+            <div class="underlined"></div>
+          </li>
+          <li>
+            <a href="">Sales</a>
+            <div class="underlined"></div>
+          </li>
+          <li>
+            <a href="">Education</a>
+            <div class="underlined"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="img-wrapper">
+        <img src="./quick-start.png" alt="" />
+      </div>
+    </section>
+    <footer>
+      <div class="wrapper">
+        <div class="left">
+          <div class="first">
+            <ul class="col">
+              <li><p>Prezi</p></li>
+              <li><p>Product</p></li>
+              <li><p>Prezi Video</p></li>
+              <li><p>Gallery</p></li>
+              <li><p>The Science</p></li>
+              <li><p>Conversational Presenting</p></li>
+              <li><p>For Business</p></li>
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+            <ul class="col">
+              <li><p>The Science</p></li>
+              <li><p>Conversational Presenting</p></li>
+              <li><p>For Business</p></li>
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+            <ul class="col">
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+          </div>
+          <div class="second">
+            <ul class="col">
+               <li><p>The Science</p></li>
+              <li><p>Conversational Presenting</p></li>
+              <li><p>For Business</p></li>
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+            <ul class="col">
+               <li><p>The Science</p></li>
+              <li><p>Conversational Presenting</p></li>
+              <li><p>For Business</p></li>
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+            <ul class="col">
+               <li><p>The Science</p></li>
+              <li><p>Conversational Presenting</p></li>
+              <li><p>For Business</p></li>
+              <li><p>For Education</p></li>
+              <li><p>Testimonials</p></li>
+              <li><p>Templates</p></li>
+              <li><p>Affiliates</p></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="right">
+            <li>
+              <p>Blog</p>
+            </li>
+            <li>
+              <p>Jan. 21, 2020</p>
+              <a href="">The future of Prezi Classic: The end of Adobe Flash and next steps</a>
+            </li>
+            <li>
+              <p>Jan. 21, 2020</p>
+              <a href="">The future of Prezi Classic: The end of Adobe Flash and next steps</a>
+            </li>
+            <li>
+              <p>Jan. 21, 2020</p>
+              <a href="">The future of Prezi Classic: The end of Adobe Flash and next steps</a>
+            </li>
+            <li><a href="">Last posts</a></li>
+            <li>
+              <a href=""><img src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/common/img/footers/facebook-icon.svg" alt=""></a>
+              <a href=""><img src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/common/img/footers/twitter-icon.svg" alt=""></a>
+              <a href=""><img src="https://assets.prezicdn.net/assets-versioned/coverservice-versioned/1019-492a361a030315a736827053e58ae4393b0e57b0/common/img/footers/linkedin-icon.svg" alt=""></a>
+            </li>
+            <li><p>© 2020 Prezi Inc. Terms & Privacy Policy</p></li>
+        </ul>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>
